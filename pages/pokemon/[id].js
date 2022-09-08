@@ -46,9 +46,6 @@ export default function Details() {
                         />
                     </div>
                     <div>
-                        {JSON.stringify(pokemon)}
-                    </div>
-                    <div>
                         <h4
                             className={styles.heading}
                         >{pokemon.name}</h4>
@@ -56,16 +53,18 @@ export default function Details() {
                         <h5>stats :</h5>
                         <table border={1}>
                             <thead>
-                                {
-                                    ['name', 'value'].map((head) =>
-                                        <th>{head}</th>
-                                    )
-                                }
+                                <tr>
+                                    {
+                                        ['name', 'value'].map((head, i) =>
+                                            <th key={`${head}-${i}`}>{head}</th>
+                                        )
+                                    }
+                                </tr>
                             </thead>
                             <tbody>
                                 {
-                                    pokemon.stats.map((stat) => {
-                                        return <tr>
+                                    pokemon.stats.map((stat, i) => {
+                                        return <tr key={i}>
                                             <td>{stat.name}</td>
                                             <td>{stat.value}</td>
                                         </tr>

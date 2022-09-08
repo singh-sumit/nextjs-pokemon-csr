@@ -1,0 +1,12 @@
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 10px;
+}
+
+.card img{
+  max-height: 200px;
+  border-radius: 20px;
+  margin: 0px 5px;
+}
